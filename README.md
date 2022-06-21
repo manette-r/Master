@@ -14,7 +14,7 @@ Python
 
 
 
-##Classification d'assertions selon leurs valeurs de véracité (Dossier M1)
+## Classification d'assertions selon leurs valeurs de véracité (Dossier M1)
 
 
 Apprentissage supervisé, prédire si des assertions sont vraies ou fausses.
