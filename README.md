@@ -71,14 +71,19 @@ Python (Projet à 2 personnes)
 
 Les consignes se trouvent dans ce document : M1/traitement_semantique_donnees/Partie_1/TP1_consignes_2021.pdf 
 
+(Projet seule)
+
 ### Partie 2 : Connexion d'oeuvres de différentes bases de données à partir de différentes mesures de similarité 
  
 Les consignes se trouvent dans ce document : M1/traitement_semantique_donnees/Partie_2/consignes.pdf
+
+(Projet à 4 personnes)
 
 ### Partie 3 : Développement d'un système OBDA (accès aux données basées sur une ontologie) simplifié
 
 Les consignes se trouvent dans ce document : M1/traitement_semantique_donnees/Partie_3/tp-obi-wan-query-rewriting-consignes.pdf
 
+(Projet à 2 personnes)
 
 ## Application Petite Annonce (Dossier M1)
 
