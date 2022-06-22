@@ -9,6 +9,12 @@ Ce répertoire rassemble tous les projets réalisés pendant mon master IASD (In
 
 Génération et étude de différents types de données à travers différentes méthodes notamment des réseaux de neurones.
 
+### Types de données 
+
+Nous avons pu étudier 3 types de données : 
+- numériques (Jeu de données Iris)
+- images (jeu de données MNIST)
+- textuelles (Alice aux Pays des Merveilles et deux autres bases de données d'avis de films)
 
 Python (Projet à 3 personnes)
 
@@ -18,6 +24,8 @@ Python (Projet à 3 personnes)
 
 
 Apprentissage supervisé, prédire si des assertions sont vraies ou fausses.
+
+Pour ce faire, nous avons testé plusieurs prétraitements notamment grâce à la fonction launchExperimentations. 
 
 
 Python (Projet à 4 personnes)
