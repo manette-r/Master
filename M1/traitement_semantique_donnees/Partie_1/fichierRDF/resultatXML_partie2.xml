@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:schema="https://schema.org/"
+    xmlns:dbp="https://dbpedia.org/property/"
+    xmlns:mus="http://data.doremus.org/ontology#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/">
+  <rdf:Description rdf:about="https://dbpedia.org/page/Symphony_No._41_(Mozart)">
+    <mus:U14_has_tempo>
+      <rdf:Description rdf:about="https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__3">
+        <dbp:title>Menuetto</dbp:title>
+        <dbp:title>3rd movement</dbp:title>
+      </rdf:Description>
+    </mus:U14_has_tempo>
+    <mus:U14_has_tempo>
+      <rdf:Description rdf:about="https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__2">
+        <dbp:title>Andante Cantabile</dbp:title>
+        <dbp:title>2nd movement</dbp:title>
+      </rdf:Description>
+    </mus:U14_has_tempo>
+    <dbp:composer>
+      <rdf:Description rdf:about="https://dbpedia.org/page/Wolfgang_Amadeus_Mozart">
+        <foaf:lastName>Mozart</foaf:lastName>
+        <foaf:firstName>Wolfgang</foaf:firstName>
+      </rdf:Description>
+    </dbp:composer>
+    <dbp:subtitle>Jupiter</dbp:subtitle>
+    <dbp:name>Symphonie no 41</dbp:name>
+    <mus:U14_has_tempo>
+      <rdf:Description rdf:about="https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__4">
+        <dbp:title>Molto Allegro</dbp:title>
+        <dbp:title>4th movement</dbp:title>
+      </rdf:Description>
+    </mus:U14_has_tempo>
+    <mus:U12_has_genre rdf:resource="https://dbpedia.org/page/Symphony"/>
+    <mus:U14_has_tempo>
+      <rdf:Description rdf:about="https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__1">
+        <dbp:title>Allegro Vivace</dbp:title>
+        <dbp:title>1st movement</dbp:title>
+      </rdf:Description>
+    </mus:U14_has_tempo>
+    <dbp:key rdf:resource="https://dbpedia.org/page/C_major"/>
+    <mus:U51i_has_partial_or_full_recording>
+      <rdf:Description rdf:about="https://www.cleverte.fr/Mozart-/Symphonien-No-41-Jupiter/32311">
+        <dbp:orchestra>
+          <rdf:Description rdf:about="https://dbpedia.org/page/London_Philharmonic_Orchestra">
+            <dbp:city rdf:resource="https://dbpedia.org/page/London"/>
+          </rdf:Description>
+        </dbp:orchestra>
+        <dbp:conductor>
+          <rdf:Description rdf:about="https://dbpedia.org/page/Claudio_Abbado">
+            <foaf:lastName>Abbado</foaf:lastName>
+            <foaf:firstName>Claudio</foaf:firstName>
+          </rdf:Description>
+        </dbp:conductor>
+        <dbp:year>1980</dbp:year>
+      </rdf:Description>
+    </mus:U51i_has_partial_or_full_recording>
+  </rdf:Description>
+</rdf:RDF>

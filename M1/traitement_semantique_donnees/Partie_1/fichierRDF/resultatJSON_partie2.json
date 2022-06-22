@@ -1,0 +1,151 @@
+{ 
+  "https://dbpedia.org/page/Wolfgang_Amadeus_Mozart" : { 
+    "http://xmlns.com/foaf/0.1/firstName" : [ { 
+      "type" : "literal" ,
+      "value" : "Wolfgang"
+    }
+     ] ,
+    "http://xmlns.com/foaf/0.1/lastName" : [ { 
+      "type" : "literal" ,
+      "value" : "Mozart"
+    }
+     ]
+  }
+   ,
+  "https://dbpedia.org/page/Claudio_Abbado" : { 
+    "http://xmlns.com/foaf/0.1/firstName" : [ { 
+      "type" : "literal" ,
+      "value" : "Claudio"
+    }
+     ] ,
+    "http://xmlns.com/foaf/0.1/lastName" : [ { 
+      "type" : "literal" ,
+      "value" : "Abbado"
+    }
+     ]
+  }
+   ,
+  "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__1" : { 
+    "https://dbpedia.org/property/title" : [ { 
+      "type" : "literal" ,
+      "value" : "1st movement"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "Allegro Vivace"
+    }
+     ]
+  }
+   ,
+  "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__2" : { 
+    "https://dbpedia.org/property/title" : [ { 
+      "type" : "literal" ,
+      "value" : "2nd movement"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "Andante Cantabile"
+    }
+     ]
+  }
+   ,
+  "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__3" : { 
+    "https://dbpedia.org/property/title" : [ { 
+      "type" : "literal" ,
+      "value" : "Menuetto"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "3rd movement"
+    }
+     ]
+  }
+   ,
+  "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__4" : { 
+    "https://dbpedia.org/property/title" : [ { 
+      "type" : "literal" ,
+      "value" : "4th movement"
+    }
+    , { 
+      "type" : "literal" ,
+      "value" : "Molto Allegro"
+    }
+     ]
+  }
+   ,
+  "https://dbpedia.org/page/London_Philharmonic_Orchestra" : { 
+    "https://dbpedia.org/property/city" : [ { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/London"
+    }
+     ]
+  }
+   ,
+  "https://dbpedia.org/page/Symphony_No._41_(Mozart)" : { 
+    "http://data.doremus.org/ontology#U51i_has_partial_or_full_recording" : [ { 
+      "type" : "uri" ,
+      "value" : "https://www.cleverte.fr/Mozart-/Symphonien-No-41-Jupiter/32311"
+    }
+     ] ,
+    "https://dbpedia.org/property/composer" : [ { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/Wolfgang_Amadeus_Mozart"
+    }
+     ] ,
+    "https://dbpedia.org/property/subtitle" : [ { 
+      "type" : "literal" ,
+      "value" : "Jupiter"
+    }
+     ] ,
+    "http://data.doremus.org/ontology#U12_has_genre" : [ { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/Symphony"
+    }
+     ] ,
+    "http://data.doremus.org/ontology#U14_has_tempo" : [ { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__1"
+    }
+    , { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__2"
+    }
+    , { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__3"
+    }
+    , { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__4"
+    }
+     ] ,
+    "https://dbpedia.org/property/name" : [ { 
+      "type" : "literal" ,
+      "value" : "Symphonie no 41"
+    }
+     ] ,
+    "https://dbpedia.org/property/key" : [ { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/C_major"
+    }
+     ]
+  }
+   ,
+  "https://www.cleverte.fr/Mozart-/Symphonien-No-41-Jupiter/32311" : { 
+    "https://dbpedia.org/property/orchestra" : [ { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/London_Philharmonic_Orchestra"
+    }
+     ] ,
+    "https://dbpedia.org/property/year" : [ { 
+      "type" : "literal" ,
+      "value" : "1980"
+    }
+     ] ,
+    "https://dbpedia.org/property/conductor" : [ { 
+      "type" : "uri" ,
+      "value" : "https://dbpedia.org/page/Claudio_Abbado"
+    }
+     ]
+  }
+}

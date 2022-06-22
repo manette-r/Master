@@ -70,3 +70,19 @@ Le contenu du code se trouve sur : https://github.com/DorineFontaine/Projet_Peti
 
 
 Android et Java (Projet à 2 personnes)
+
+
+## Traitement sémantique des données 
+
+
+### Partie 1 : Modélisation d'un domaine à partir d'un texte
+
+Les consignes se trouvent dans ce document : 
+
+### Partie 2 : Connexion d'oeuvres de différentes bases de données à partir de différentes mesures de similarité 
+ 
+Les consignes se trouvent dans ce document : 
+
+### Partie 3 : Développement d'un système OBDA (accès aux données basées sur une ontologie) simplifié
+
+Les consignes se trouvent dans ce document : 

@@ -1,0 +1,42 @@
+@prefix dbp:    <https://dbpedia.org/property/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix mus:    <http://data.doremus.org/ontology#> .
+@prefix schema: <https://schema.org/> .
+
+<https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__4>
+        dbp:title  "Molto Allegro" , "4th movement" .
+
+<https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__2>
+        dbp:title  "Andante Cantabile" , "2nd movement" .
+
+<https://dbpedia.org/page/Wolfgang_Amadeus_Mozart>
+        foaf:firstName  "Wolfgang" ;
+        foaf:lastName   "Mozart" .
+
+<https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__3>
+        dbp:title  "Menuetto" , "3rd movement" .
+
+<https://dbpedia.org/page/Claudio_Abbado>
+        foaf:firstName  "Claudio" ;
+        foaf:lastName   "Abbado" .
+
+<https://www.cleverte.fr/Mozart-/Symphonien-No-41-Jupiter/32311>
+        dbp:conductor  <https://dbpedia.org/page/Claudio_Abbado> ;
+        dbp:orchestra  <https://dbpedia.org/page/London_Philharmonic_Orchestra> ;
+        dbp:year       "1980" .
+
+<https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__1>
+        dbp:title  "Allegro Vivace" , "1st movement" .
+
+<https://dbpedia.org/page/London_Philharmonic_Orchestra>
+        dbp:city  <https://dbpedia.org/page/London> .
+
+<https://dbpedia.org/page/Symphony_No._41_(Mozart)>
+        mus:U12_has_genre  <https://dbpedia.org/page/Symphony> ;
+        mus:U14_has_tempo  <https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__3> , <https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__2> , <https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__4> , <https://dbpedia.org/page/Symphony_No._41_(Mozart)__Sound__1> ;
+        mus:U51i_has_partial_or_full_recording
+                <https://www.cleverte.fr/Mozart-/Symphonien-No-41-Jupiter/32311> ;
+        dbp:composer       <https://dbpedia.org/page/Wolfgang_Amadeus_Mozart> ;
+        dbp:key            <https://dbpedia.org/page/C_major> ;
+        dbp:name           "Symphonie no 41" ;
+        dbp:subtitle       "Jupiter" .
