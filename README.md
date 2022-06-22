@@ -63,14 +63,6 @@ Il existe aussi une recherche approfondie proposée qui sera faite avec les vari
 
 Python (Projet à 2 personnes)
 
-## Application Petite Annonce (Dossier M1)
-
-Création d'une application Android sous Android Studio avec Firebase Real Database comme base de données. 
-Le contenu du code se trouve sur : https://github.com/DorineFontaine/Projet_Petite_Anonce_DM.git
-
-
-Android et Java (Projet à 2 personnes)
-
 
 ## Traitement sémantique des données (Dossier M1)
 
@@ -86,3 +78,12 @@ Les consignes se trouvent dans ce document : M1/traitement_semantique_donnees/Pa
 ### Partie 3 : Développement d'un système OBDA (accès aux données basées sur une ontologie) simplifié
 
 Les consignes se trouvent dans ce document : M1/traitement_semantique_donnees/Partie_3/tp-obi-wan-query-rewriting-consignes.pdf
+
+
+## Application Petite Annonce (Dossier M1)
+
+Création d'une application Android sous Android Studio avec Firebase Real Database comme base de données. 
+Le contenu du code se trouve sur : https://github.com/DorineFontaine/Projet_Petite_Anonce_DM.git
+
+
+Android et Java (Projet à 2 personnes)
