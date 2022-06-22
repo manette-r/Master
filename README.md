@@ -77,7 +77,7 @@ Android et Java (Projet à 2 personnes)
 
 ### Partie 1 : Modélisation d'un domaine à partir d'un texte
 
-Les consignes se trouvent dans ce document : M1/traitement_semantique_donnees/Partie_1/TP1_consignes_2021.pdf
+Les consignes se trouvent dans ce document : ### M1/traitement_semantique_donnees/Partie_1/TP1_consignes_2021.pdf ###
 
 ### Partie 2 : Connexion d'oeuvres de différentes bases de données à partir de différentes mesures de similarité 
  
