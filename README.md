@@ -63,7 +63,7 @@ Il existe aussi une recherche approfondie proposée qui sera faite avec les vari
 
 Python (Projet à 2 personnes)
 
-## Application Petite Annonce 
+## Application Petite Annonce (Dossier M1)
 
 Création d'une application Android sous Android Studio avec Firebase Real Database comme base de données. 
 Le contenu du code se trouve sur : https://github.com/DorineFontaine/Projet_Petite_Anonce_DM.git
@@ -72,7 +72,7 @@ Le contenu du code se trouve sur : https://github.com/DorineFontaine/Projet_Peti
 Android et Java (Projet à 2 personnes)
 
 
-## Traitement sémantique des données 
+## Traitement sémantique des données (Dossier M1)
 
 
 ### Partie 1 : Modélisation d'un domaine à partir d'un texte
