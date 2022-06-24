@@ -1,0 +1,38 @@
+Vente d'un ticket du BDE pour une soirée :
+
+Je veux connaître le nombre de ventes par type de soirées et par filières.
+
+SELECT L.type_sortie, B.porteeBDE, SUM(nbTicketsVendus)
+FROM VENTE_TICKETS F, LVTS L, BDE B
+WHERE F.ID_LVTS = L.ID_LVTS AND F.ID_BDE = B.ID_BDE
+GROUP BY L.type_sortie, B.porteeBDE;
+
+Je souhaite connaître les ventes par rapport à la période et au coût total de la fête.
+
+SELECT SUM(nbTicketsVendus), D.periode, S.coutSoiree
+FROM VENTE_TICKETS F , SORTIE S , DATES D
+WHERE F.ID_Sortie = S.ID_Sortie AND D.ID_Date = F.ID_Date 
+GROUP BY S.coutSoiree, D.periode;
+
+Je veux obtenir le pourcentage de participation par rapport au prix des soirées.
+
+SELECT S.ID_sortie,S.coutSoiree, S.nombrePersonnes*100/S.inviteMax PCR
+FROM  SORTIE S, VENTE_TICKETS F
+WHERE F.ID_Sortie = S.ID_Sortie;
+
+
+
+Note par rapport aux sorties :
+ 
+Je veux connaître la moyenne des notes par rapport à une soirée selon l'alcoolémie.
+
+SELECT AVG(Note)/COUNT(Note), A.qte_alcool_bus
+FROM NOTE_SORTIES S, ALCOOL  A
+WHERE S.ID_Alcool = A.ID_Alcool 
+GROUP BY A.qte_alcool_bus;
+
+Je veux comparer l'heure de fin d'une sortie sur les notes liées.
+SELECT H.heure, S.Note
+FROM  HEURE H, NOTE_SORTIES S
+WHERE H.ID_Heure = S.ID_HeureFin;
+

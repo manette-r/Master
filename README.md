@@ -92,3 +92,11 @@ Le contenu du code se trouve sur : https://github.com/DorineFontaine/Projet_Peti
 
 
 Android et Java (Projet à 2 personnes)
+
+
+## EDBD : Entrepôts de données et Big-Data (Dossier M1) 
+
+L'objectif a été de concevoir, implémenter et interroger un entrepôt de données. 
+
+
+requêtes SQL (Projet à 3 personnes)

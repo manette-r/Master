@@ -1,0 +1,188 @@
+CREATE TABLE SORTIE (
+  ID_Sortie INTEGER PRIMARY KEY,
+  nombrePersonnes INTEGER,
+  payant CHAR(1),
+  etablissement VARCHAR2(100),
+  privée CHAR(1),
+  description VARCHAR2(150),
+  publicCiblee VARCHAR2(50),
+  coutSoiree NUMBER(5,2),
+  inviteMax INTEGER,
+  presenceAlcool CHAR(1)
+);
+
+CREATE TABLE HEURE (	
+  ID_Heure INTEGER PRIMARY KEY,
+  heureJour VARCHAR2(5),
+  heure INTEGER,
+  PeriodeJournee VARCHAR2(50),
+  
+  CHECK (
+    PeriodeJournee IN 
+    ('MATIN', 'MIDI', 'APRES-MIDI', 'SOIR', 'NUIT')
+  )
+);
+
+CREATE TABLE DATES (
+  ID_Date INTEGER PRIMARY KEY,
+  dateComplete DATE,
+  jour INTEGER,
+  mois INTEGER,
+  année INTEGER,
+  jourSemaine VARCHAR2(10),
+  moisCalendrier VARCHAR2(25),
+  indicateurVacances VARCHAR2(25),
+  indicateurWE VARCHAR2(25),
+  indicateurFerié VARCHAR2(25),
+  periode VARCHAR2(25)
+);
+
+CREATE TABLE ETUDIANT (
+  ID_Etudiant INTEGER PRIMARY KEY,
+  filiere VARCHAR2(50),
+  niveauEtude VARCHAR2(20),
+  anneePremiereInscription INTEGER,
+  etablissement VARCHAR2(50),
+  age INTEGER,
+  genre VARCHAR2(5),
+  etatMatrimonial VARCHAR2(15),
+  distanceUniv INTEGER, 
+  budgetMoyen INTEGER,
+
+   CHECK (
+    etatMatrimonial IN 
+    ('COUPLE', 'CELIBATAIRE', 'VEUF', 'MARIE')
+  )
+);
+
+create table MATIERE (
+	ID_Matiere INTEGER PRIMARY KEY,
+	titre VARCHAR2(50),
+	totalHeuresCM INTEGER,
+	totalHeuresTD INTEGER,
+    totalHeuresTP INTEGER,
+	niveauMatiere VARCHAR2(20)
+);
+
+CREATE TABLE BDE (
+	ID_BDE INTEGER PRIMARY KEY,
+	nom VARCHAR2(50),
+	budgetAnnuel INTEGER,
+	inscription CHAR(1), 
+	statut VARCHAR2(6), 
+	typeBDE VARCHAR2(20),
+	porteeBDE VARCHAR2(20),
+	nbInscrits INTEGER,
+	prixAdherant FLOAT,
+	cartePromotionnelle CHAR(1)
+);
+
+CREATE TABLE LVTS (
+  ID_LVTS INTEGER PRIMARY KEY,
+  lieu_vente VARCHAR2(50),
+  type_sortie VARCHAR2(50),
+  type_evenement VARCHAR2(50)
+);
+
+CREATE TABLE ALCOOL (
+  ID_Alcool INTEGER PRIMARY KEY,
+  qte_alcool_bus INTEGER,
+  qte_alcool_sang FLOAT
+);
+
+CREATE TABLE CONTROLE (
+  ID_Controle INTEGER PRIMARY KEY,
+  type_controle VARCHAR2(20),
+  coefficient FLOAT,
+  coefficient_matiere FLOAT,
+  moyenne_historique FLOAT
+);
+
+CREATE TABLE NOTE_SORTIES (
+  ID_Etudiant INTEGER NOT NULL,
+  ID_Sortie INTEGER NOT NULL,
+  ID_HeureDebut INTEGER NOT NULL,
+  ID_HeureFin INTEGER NOT NULL,
+  ID_Date INTEGER NOT NULL,
+  ID_Matiere INTEGER NOT NULL,
+  ID_Controle INTEGER NOT NULL,
+  ID_Alcool INTEGER NOT NULL,
+  ID_HeureDebutControle INTEGER NOT NULL,
+  Note FLOAT NOT NULL,
+  
+  CONSTRAINT PK_NOTE_SORTIES PRIMARY KEY (ID_Etudiant, ID_Sortie, ID_HeureDebut, ID_HeureFin, ID_Date, ID_Matiere, ID_Controle, ID_Alcool, ID_HeureDebutControle),
+  
+  CONSTRAINT FK_NS_E FOREIGN KEY (ID_Etudiant) REFERENCES ETUDIANT (ID_Etudiant),
+  CONSTRAINT FK_NS_S FOREIGN KEY (ID_Sortie) REFERENCES SORTIE (ID_Sortie),
+  CONSTRAINT FK_NS_HD FOREIGN KEY (ID_HeureDebut) REFERENCES HEURE (ID_Heure),
+  CONSTRAINT FK_NS_HF FOREIGN KEY (ID_HeureFin) REFERENCES HEURE (ID_Heure),
+  CONSTRAINT FK_NS_D FOREIGN KEY (ID_Date) REFERENCES DATES (ID_Date),
+  CONSTRAINT FK_NS_M FOREIGN KEY (ID_Matiere) REFERENCES MATIERE (ID_Matiere),
+  CONSTRAINT FK_NS_C FOREIGN KEY (ID_Controle) REFERENCES CONTROLE (ID_Controle),
+  CONSTRAINT FK_NS_A FOREIGN KEY (ID_Alcool) REFERENCES ALCOOL (ID_Alcool),
+  CONSTRAINT FK_NS_HDC FOREIGN KEY (ID_HeureDebutControle) REFERENCES HEURE (ID_Heure)
+);
+
+CREATE TABLE VENTE_TICKETS (
+	ID_Sortie INTEGER,
+	ID_Date INTEGER,
+	ID_BDE INTEGER,
+	ID_Heure INTEGER,
+	ID_LVTS INTEGER,
+	prixTicket FLOAT,
+	nbTicketsVendus INTEGER,
+	
+	CONSTRAINT PK_VENTE_TICKETS PRIMARY KEY (ID_Sortie, ID_Date, ID_BDE, ID_Heure, ID_LVTS),
+	
+	CONSTRAINT FK_VT_S FOREIGN KEY (ID_Sortie) REFERENCES SORTIE (ID_Sortie),
+	CONSTRAINT FK_VT_D FOREIGN KEY (ID_Date) REFERENCES DATES (ID_Date),
+	CONSTRAINT FK_VT_BDE FOREIGN KEY (ID_BDE) REFERENCES BDE (ID_BDE),
+	CONSTRAINT FK_VT_H FOREIGN KEY (ID_Heure) REFERENCES HEURE (ID_Heure),
+	CONSTRAINT FK_VT_LVTS FOREIGN KEY (ID_LVTS) REFERENCES LVTS (ID_LVTS)
+);
+
+
+INSERT INTO ETUDIANT VALUES (1, 'Cinema', 'Master', 2021, 'Paul Valery', 20, 'Femme', 'CELIBATAIRE', 500, 50);
+INSERT INTO ETUDIANT VALUES (2, 'Informatique', 'Master', 2018, 'Université de Montpellier', 22, 'Homme', 'CELIBATAIRE', 500, 50);
+INSERT INTO ETUDIANT VALUES (3, 'Lettres Modernes', 'Licence', 2021, 'Paul Valery', 20, 'Femme', 'CELIBATAIRE', 10000, 100);
+
+INSERT INTO SORTIE VALUES (135, 1500, 'N', 'Heat Club', 'Y', '...', 'Médecine', 15, 500, 'Y');
+INSERT INTO SORTIE VALUES (1823, 800, 'Y', 'Game Taverne', 'Y', '...', 'M1', 6, 200, 'Y');
+INSERT INTO SORTIE VALUES (1023, 300, 'N', 'Titi Twister', 'Y', '...', 'L3', 4.50, 90, 'Y');
+
+INSERT INTO CONTROLE VALUES (135, 'CC', 5, 5, 12);
+INSERT INTO CONTROLE VALUES (1823, 'CT', 2.5, 2, 15);
+INSERT INTO CONTROLE VALUES (1023, 'DM', 2, 1, 11);
+
+INSERT INTO HEURE VALUES (123, '12:00', 12, 'MIDI');
+INSERT INTO HEURE VALUES (124, '13:15', 13, 'APRES-MIDI');
+INSERT INTO HEURE VALUES (125, '15:45', 15, 'APRES-MIDI');
+
+INSERT INTO DATES VALUES (1, DATE '2021-1-1', 1, 1, 2021, 'Vendredi', 'Janvier', 'Y', 'N', 'Y', 'Nouvel An');
+INSERT INTO DATES VALUES (2, DATE '2000-12-24', 24, 12, 2000, 'Dimanche', 'Décembre', 'Y', 'Y', 'N', 'Noël');
+INSERT INTO DATES VALUES (3, DATE '2000-6-18', 18, 6, 2000, 'Dimanche', 'Juin', 'N', 'N', 'N', 'Eté');
+
+INSERT INTO MATIERE VALUES (1, 'Introduction Bases de Données', 30, 60, 10, 'Licence');
+INSERT INTO MATIERE VALUES (2, 'Mathématiques compliquées', 90, 60, 12, 'Master');
+INSERT INTO MATIERE VALUES (3, 'Musique classique', 15, 60, 20, 'Licence');
+
+INSERT INTO BDE VALUES (1, 'Lyons', 24400, 'Y', 'Privé', 'Faculté', 'Sciences', 230, 20, 'Y');
+INSERT INTO BDE VALUES (2, 'La Glacière', 4000, 'N', 'Public', 'IUT', 'Gestion', 40, 0, 'N');
+INSERT INTO BDE VALUES (3, 'Les Ingélos', 12500, 'Y', 'Public', 'Ingénieur', 'Lettre', 60, 5, 'Y');
+
+INSERT INTO ALCOOL VALUES(1, 1, 0.2);
+INSERT INTO ALCOOL VALUES(2, 5, 1);
+INSERT INTO ALCOOL VALUES(3, 3, 0.7);
+
+INSERT INTO LVTS VALUES(1, 'Stand', 'Soirée Halloween', 'Boite');
+INSERT INTO LVTS VALUES(2, 'En ligne', 'Soirée Film', 'Cinéma');
+INSERT INTO LVTS VALUES(3, 'Bureau BDE', 'Afterwork', 'Barathon');
+
+INSERT INTO NOTE_SORTIES VALUES(1, 135, 123, 124, 1, 1, 135, 1, 125, 10.5);
+INSERT INTO NOTE_SORTIES VALUES(1, 1823, 124, 125, 1, 1, 1823, 1, 123, 14.5);
+INSERT INTO NOTE_SORTIES VALUES(3, 135, 123, 125, 1, 1, 135, 1, 125, 2);
+INSERT INTO NOTE_SORTIES VALUES(2, 1823, 123, 125, 1, 1, 135, 1, 125, 2);
+
+INSERT INTO VENTE_TICKETS VALUES(135, 1, 1, 123, 1, 10, 60);
+INSERT INTO VENTE_TICKETS VALUES(1823, 2, 1, 123, 3, 12, 10);
+INSERT INTO VENTE_TICKETS VALUES(1023, 3, 2, 124, 2, 4, 300);
