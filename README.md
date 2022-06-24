@@ -97,6 +97,6 @@ Android et Java (Projet à 2 personnes)
 ## EDBD : Entrepôts de données et Big-Data (Dossier M1) 
 
 L'objectif a été de concevoir, implémenter et interroger un entrepôt de données. 
-
+Le rapport détaillé du projet (rapport_projet_edbd), les tables de faits et dimensions (edbd_groupe_7), ainsi que les requêtes (requete_groupe_7) se trouvent dans le dossier "edbd".
 
 requêtes SQL (Projet à 3 personnes)
