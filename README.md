@@ -100,6 +100,3 @@ L'objectif a été de concevoir, implémenter et interroger un entrepôt de donn
 Le rapport détaillé du projet (rapport_projet_edbd), les tables de faits et dimensions (edbd_groupe_7), ainsi que les requêtes (requete_groupe_7) se trouvent dans le dossier "edbd".
 
 requêtes SQL (Projet à 3 personnes)
-
-
-# Code_vS1 (Privée stage)  
