@@ -149,21 +149,22 @@ class ResultPage(tk.Frame):
 
         label = tk.Label(self,text="Résultat admission !", font=("Aria Bold",40))
         label.place(x=230, y=30)
-        texte_label = tk.Label(self, text="Selectionnez les criteres de votre choix !",font=("Aria ",20))
-        texte_label.place(x=200, y=130)
         # Champs d'entrée
          
         label_choix_etudiants = tk.Label(self, text="Choix des étudiants : ")
-        label_choix_etudiants.place(x=50, y=250)
+        label_choix_etudiants.place(x=50, y=200)
 
         self.choix_etudiants = tk.Label(self, text=" choix ")
-        self.choix_etudiants.place(x=200, y=250)     
+        self.choix_etudiants.place(x=200, y=200)     
 
         label_choix_ecoles = tk.Label(self, text="Choix des écoles : ")
-        label_choix_ecoles.place(x=50, y=350)
+        label_choix_ecoles.place(x=50, y=250)
 
         self.choix_ecoles = tk.Label(self, text=" choix ")
-        self.choix_ecoles.place(x=200, y=350)    
+        self.choix_ecoles.place(x=200, y=250)    
+
+        self.result_affectation = tk.Label(self, text=" résultats ")
+        self.result_affectation.place(x=50, y=300)  
 
         #Initialisation des strings pour les afficher 
         self.nb_pref = tk.IntVar()  
@@ -180,9 +181,36 @@ class ResultPage(tk.Frame):
         Button.place(x=10, y=450)
 
     def correct_label(self):
-        self.choix_etudiants.config(text=self.controller.etudiants_choix)  
-        self.choix_ecoles.config(text=self.controller.ecoles_choix )  
+        etudiants_choix_string = self.controller.etudiants_choix
+        ecoles_choix_string = self.controller.ecoles_choix
 
+        #on les affiche 
+        self.choix_etudiants.config(text=etudiants_choix_string)  
+        self.choix_ecoles.config(text=ecoles_choix_string)  
+
+        #on transforme les chaînes de caractères en liste de listes d'entiers 
+        etudiants_choix = self.stringIntoList(etudiants_choix_string)
+        ecoles_choix = self.stringIntoList(ecoles_choix_string)
+        nb_choix = len(ecoles_choix)
+        final_affectation = mariageStable(etudiants_choix, ecoles_choix)
+        string_affectation = printAffectation(final_affectation, nb_choix)
+        self.result_affectation.config(text=string_affectation) 
+
+    def stringIntoList(self, str_ecole):
+
+        #on enleve la premiere et derniere parenthese 
+        str_ecole = str_ecole[1:len(str_ecole)-1]
+        liste_choix_tt = []
+        list_choix = []
+
+        for carac in str_ecole:
+            if (carac == ")") : 
+                liste_choix_tt.append(list_choix)
+                list_choix = []
+            elif (carac.isnumeric()) :
+                list_choix.append(int(carac))
+
+        return liste_choix_tt
             
 
 class Application(tk.Tk):

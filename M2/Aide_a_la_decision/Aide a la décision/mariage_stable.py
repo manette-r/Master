@@ -10,7 +10,7 @@ def generateurPref(nb_etu,nb_eco):
   return etudiants,ecole
 
 #en entrée les listes qu'on peut obtenir en sortie de generateurPref
-def mariageSAlex(pref_etudiants, pref_ecole):
+def mariageStable(pref_etudiants, pref_ecole):
 
   nb = len(pref_etudiants)
   #liste d'attribution (index correspond à une ecole/eleve et valeur : 0 pas d'attribution, 1 : attribué)
@@ -62,5 +62,10 @@ def mariageSAlex(pref_etudiants, pref_ecole):
   return final_affectation
 
 def printAffectation(affectation, nb):
+  
+  stringaffectation = ""
   for k in list(range(1, nb+1)):
-    print("\nEleve ",k," a été admis dans l'école ",affectation.get(k),".")
+    buffer_affectation = "\nEleve "+str(k)+" a été admis dans l'école "+str(affectation.get(k))+"."
+    stringaffectation += buffer_affectation
+    
+  return stringaffectation
