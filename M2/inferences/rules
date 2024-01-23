@@ -1,0 +1,49 @@
+1) 		$v r_succ $x & $z r_succ w & $x r_pos 'Nom:' & $x r_succ $y & ($y == 'à' || $y == 'de' || $y == 'en' || $y == 'sans') & $y r_succ $z & $z r_pos 'Nom:' => $a == 'Groupe prépositionnel' & $a r_head $x & $v r_succ $a & $a r_succ $w 
+
+la fille à lunettes /l'élève de la maîtresse/ le vélo à trois roues / le mur en pierre
+Il faut ajouter le déterminant non ??? Fille à lunettes pour le moment 
+Les GN (Groupes prépositionnels) sont composés de certaines prépositions, il vaut mieux les noter à part pour pas qu'ils prennent des "fausses prépositions"
+
+2)		$x == 'GN' & $x r_tete $y & $x r_agent-1 $z => $y r_agent-1 $z 
+chat de la voisine, c'est un chat, le chat de la voisine pisse alors le chat pisse 
+
+3)		$x r_agent-1 $y & $y r_lemme $z => $x r_agent-1 $z
+pisse est aussi un nom, l'ordi aurait pu croire qu'il fait parti du GN 
+
+4)		$x r_pos 'Ver:' & $y r_pos 'Nom:' & (pas r_succ mais un truc entre comme du OU de la OU un verre de = article/determinant/partitif ? ) => $x r_patient $y 
+boit lait/grenadine
+
+5)		$x r_succ $y & $y r_succ $z & $y r_pos ADVERBE OU 'Adj:' => $x r_succ $z 
+règle adjectif ou adverbe pour : mangeais souvent des madeleines = mettre un r_succ de mangeais à des pour simplifier la phrase 
+
+6) 		$y r_pos 'Ver:' & $x r_succ $y & $y r_succ $z => $w == infinitif du verbe $y r_lemme $w & $x r_succ $w & $w r_succ $z 
+règle pour r_lemme ? à connecter avec pred et succ
+
+7)		($x r_pos 'Nom:' || $x r_pos 'GN'???) & $x r_succ $y & ($y r_pos 'Ver:' || $y r_pos 'Ver:Inf') => $x r_agent-1 $y
+nom suivit d'un verbe ca donne un r_agent-1: chat r_agent-1 boire 
+
+8) 		($x r_succ $y & $x r_pos 'Adj:' & $y r_pos 'Nom:') || ($y r_pos 'Nom:' ou groupe nominal & $y r_succ $z & $z  A CONTINUER) => $y r_carac $x 
+nom suivi d'un adjectif ca donne r_carac : chat r_carac petit (le petit chat ou le chat est petit ou le chat (vraiment) gourmant )
+
+9)		$v r_succ $x & $z r_succ w & $x r_pos determinant & $x r_succ $y & $y r_pos 'Adj:' & $y r_succ $z & $z r_pos 'Nom:' => $a == 'GN' & $a r_head $x & $v r_succ $a & $a r_succ $w
+règle pour créer les GN  det + nom + adjectif = GN (la petite Manon) groupe adjectival 
+
+10)		$v r_succ $x & $y r_succ w & $x r_pos determinant & $x r_succ $y & $y r_pos 'Nom:' => $a == 'GN' & $a r_head $x & $v r_succ $a & $a r_succ $w
+règle pour créer les GN det + nom = GN  (la fille) 
+
+11)		Ma soeur Marie 
+
+Dans l'article de Lafourcade  : 
+
+12)		$x r_pos 'Ver:' & $yr_pos 'Adv:' => $x r_manner $y
+
+13)		$x r_pos 'Nom:' & $y r_pos 'Adj:' => $x r_carac $y
+
+14)		$x r_isa artéfact & $y r_isa personne => $y r_own $x 
+le fusil du soldat		
+
+15)		$x r_isa partie du corps & $y r_isa personne => $y r_part $x 
+le bras du soldat 
+
+16)		$x r_isa personne & $y r_isa lieu humain => $y r_lieu $x 
+la fille du coron
